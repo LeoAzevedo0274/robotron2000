@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o DOM - Aula 3</title>
+    <link rel="stylesheet" href="css/data-attributes.css">
+</head>
+<body>
+    <!-- <h1>Lista de tintas:</h1>
+    <ul id="lista1">
+        <li data-cor="laranja" data-tipo="tinta-exterior" onclick="mudaCores(this)" class="item">Tinta laranja</li>
+        <li data-cor="vermelho" data-tipo="tinta-interior"  onclick="mudaCores(this)" class="item">Tinta vermelha</li>
+        <li data-cor="branco" data-tipo="tinta-interior"  onclick="mudaCores(this)" class="item">Tinta branca</li>
+        <li data-cor="amarelo" data-tipo="tinta-exterior"  onclick="mudaCores(this)" class="item">Tinta amarelo</li>
+        <li data-cor="rosa" data-tipo="tinta-exterior"  onclick="mudaCores(this)" class="item">Tinta rosa</li>
+    </ul>
+
+    <h1>Lista de tintas 2:</h1>
+    <ul id="lista2">
+      <li cor="laranja" tipo="tinta-exterior" onclick="mudaCores1(this)" class="item">Tinta laranja</li>
+      <li cor="vermelho" tipo="tinta-interior"  onclick="mudaCores1(this)" class="item">Tinta vermelha</li>
+      <li cor="branco" tipo="tinta-interior"  onclick="mudaCores1(this)" class="item">Tinta branca</li>
+      <li cor="amarelo" tipo="tinta-exterior"  onclick="mudaCores1(this)" class="item">Tinta amarelo</li>
+      <li cor="rosa" tipo="tinta-exterior"  onclick="mudaCores1(this)" class="item">Tinta rosa</li>
+    </ul> -->
+    
+    <button data-acao="mostrar">Mostrar tintas</button>
+    <button data-acao="esconder">Esconder tintas</button>
+
+    <ul class="lista" style="display:none">
+      <li cor="laranja" tipo="tinta-exterior" class="item">Tinta laranja</li>
+      <li cor="vermelho" tipo="tinta-interior" class="item">Tinta vermelha</li>
+      <li cor="branco" tipo="tinta-interior" class="item">Tinta branca</li>
+      <li cor="amarelo" tipo="tinta-exterior" class="item">Tinta amarela</li>
+      <li cor="rosa" tipo="tinta-exterior" class="item">Tinta rosa</li>
+      <li cor="preto" tipo="tinta-exterior" class="item">Tinta preta</li>
+    </ul>
+  
+    <a href="https://alura.com.br/" target="_blank"><img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo"></a>
+</body>
+<script src="js/data-attribute.js"></script>
+</html>
