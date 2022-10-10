@@ -15,7 +15,7 @@
 const robotron = document.querySelector("#robotron")
 
 robotron.addEventListener("click", () => {
-    console.log("Oi")
+    robotron.src = "img/Robotron 2000 - Amarelo.png"
 })
 
 // const subtrair = document.querySelector("#subtrair-braco")
@@ -29,6 +29,9 @@ robotron.addEventListener("click", () => {
 // subtrair.addEventListener("click", (evento) => {
 //     braco.value = parseInt(braco.value) - 1
 // })
+
+// somar.addEventListener("click", () => {manipulaDados("somar")})
+// subtrair.addEventListener("click", () => {manipulaDados("subtrair")})
 
 const pecas = {
     "bracos": {
@@ -66,32 +69,31 @@ const pecas = {
 
 const manipulaDados = (operacao, controle) => {
     const peca = controle.querySelector("[data-contador]")
-    if (operacao == "+") {
-        peca.value = parseInt(peca.value) + 1
-    } else {
-        peca.value = parseInt(peca.value) - 1
-    }
+    operacao == "+" ? peca.value = parseInt(peca.value) + 1 : peca.value = parseInt(peca.value) - 1
 }
 
 const atualizaEstatisticas = (peca, operacao) => {
     estatisticas.forEach((elemento) =>{
-        if (operacao == "+") {
-            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-        } else {
-            elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
-        }
+        operacao == "+" ? elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica] : elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
     })
 }
 
-// somar.addEventListener("click", () => {manipulaDados("somar")})
-// subtrair.addEventListener("click", () => {manipulaDados("subtrair")})
+const mudaCor = (imagem) => {
+    robotron.src = imagem
+}
 
 const controle = document.querySelectorAll("[data-controle]")
 const estatisticas = document.querySelectorAll("[data-estatistica]")
-console.log(estatisticas)
-controle.forEach((elemento, indide) =>{
-    elemento.addEventListener("click", (evento) =>{
+const cores = document.querySelectorAll(".mini-robo")
+controle.forEach((elemento, indice) => {
+    elemento.addEventListener("click", (evento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
         atualizaEstatisticas(evento.target.dataset.peca, evento.target.dataset.controle)
+    })
+})
+
+cores.forEach((elemento, indice) => {
+    elemento.addEventListener("click", (evento) => {
+        mudaCor(evento.target.dataset.imagem)
     })
 })
